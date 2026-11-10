@@ -919,3 +919,208 @@
   color: #86efac;
 }
 
+/* ==========================================================================
+   PÁGINA 1: TELA INICIAL DE CRIAR CONTA / LOGIN (AUTH GATE)
+   ========================================================================== */
+.auth-gate-wrapper {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.auth-gate-wrapper.hidden,
+.home-content-wrapper.hidden {
+  display: none !important;
+}
+
+.auth-gate-card {
+  width: 100%;
+  max-width: 480px;
+  background: rgba(15, 23, 42, 0.88);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(75, 139, 190, 0.32);
+  border-radius: 24px;
+  padding: 28px 26px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(48, 105, 152, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-gate-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.auth-gate-subtitle {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin: 3px 0 0 0;
+  line-height: 1.35;
+}
+
+.gate-session-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(48, 105, 152, 0.18));
+  border: 1px solid rgba(52, 211, 153, 0.4);
+}
+
+.gate-session-banner.hidden {
+  display: none !important;
+}
+
+.gate-session-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gate-session-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  border: 2px solid var(--py-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.gate-session-info strong {
+  display: block;
+  font-size: 0.88rem;
+  color: #f8fafc;
+}
+
+.gate-session-info span {
+  font-size: 0.74rem;
+  color: #6ee7b7;
+  font-family: var(--font-code);
+}
+
+.auth-gate-tabs {
+  margin-bottom: 2px;
+}
+
+.gate-avatar-grid .avatar-option-btn {
+  padding: 8px 4px;
+  border-radius: 12px;
+}
+
+.gate-avatar-grid .avatar-emoji {
+  font-size: 1.45rem;
+}
+
+.gate-avatar-grid .avatar-label {
+  font-size: 0.66rem;
+}
+
+.auth-gate-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* ==========================================================================
+   MENU DO PERFIL SUPERIOR DIREITO (MEU PERFIL + HISTÓRICO & ESTATÍSTICAS)
+   ========================================================================== */
+.top-profile-menu-container {
+  position: relative;
+}
+
+.chip-dropdown-caret {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  margin-left: 2px;
+  transition: transform 0.2s ease;
+}
+
+.user-profile-chip:hover .chip-dropdown-caret {
+  color: #f8fafc;
+}
+
+.top-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: 265px;
+  background: rgba(15, 23, 42, 0.96);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(75, 139, 190, 0.4);
+  border-radius: 16px;
+  padding: 8px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+  z-index: 250;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.top-profile-dropdown.hidden {
+  display: none !important;
+}
+
+.top-profile-dropdown-item {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  cursor: pointer;
+  color: #f1f5f9;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.top-profile-dropdown-item:hover {
+  background: rgba(48, 105, 152, 0.28);
+  transform: translateX(2px);
+}
+
+.top-profile-dropdown-item span {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.top-profile-dropdown-item strong {
+  display: block;
+  font-size: 0.86rem;
+  color: #f8fafc;
+}
+
+.top-profile-dropdown-item small {
+  display: block;
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-top: 1px;
+}
+
+.top-profile-dropdown-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 4px 6px;
+}
+
+.top-profile-dropdown-item.item-logout:hover {
+  background: rgba(239, 68, 68, 0.18);
+}
+
+

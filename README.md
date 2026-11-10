@@ -8,7 +8,7 @@
 ## 🌟 Destaques da Versão 0.3
 
 - 🎯 **Novo Modo Demonstração (22 Casas vs Robô)**: Versão compacta de avaliação rápida (3 corredores em zigue-zague com alta densidade de desafios, atalhos e bugs), projetada para que avaliadores experimentem todas as mecânicas do jogo contra a IA em 2 a 3 minutos.
-- 🏠 **Menu Hub Inicial Completo**: Navegação centralizada com *Demonstração*, *Jogar Solo vs CPU*, *Multiplayer Online*, *Como Jogar*, *Histórico & Stats* e *Meu Perfil*.
+- 🏠 **Tela Inicial de Criar Conta / Login & Menu Hub Limpo**: Primeira página dedicada à criação de conta/login (com opção rápida para continuar sessão ou modo convidado), menu central focado nos modos de jogo (*Demonstração*, *Jogar Solo vs CPU*, *Multiplayer Online* e *Como Jogar*) e menu de **Perfil Superior Direito** concentrando *Meu Perfil* e *Histórico & Estatísticas*.
 - 🔐 **Contas de Jogador (SHA-256) & Backup Portátil (`.json`)**: Crie múltiplos perfis protegidos por senha criptografada (`Web Crypto API`), desbloqueie conquistas, escolha entre 5 avatares (🐍 Cyber Snake, 🤖 Bit Bot, 🦊 Algo Fox, 🦅 Binary Falcon e 🐱 Terminal Cat) e exporte/importe seu progresso em `.json` para jogar em qualquer dispositivo.
 - 🧩 **Árvore Sintática (AST) Hierárquica de Blocos**:
   - **🔁 Loop `for` (`for i in range(N):`)**: Suporta aninhamento real (`for` dentro de `for` com variáveis `i, j, k, n` por escopo).
