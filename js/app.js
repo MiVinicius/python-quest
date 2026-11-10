@@ -19,7 +19,7 @@ import { ChallengeModalView } from './views/ChallengeModalView.js';
 import { ChallengeCardsView } from './views/ChallengeCardsView.js';
 import { StatusPanelView } from './views/StatusPanelView.js';
 import { SoundView } from './views/SoundView.js';
-import { HomeView } from './views/HomeView.js';
+import { HomeView } from './views/HomeView.js?v=0.3.2';
 
 import { CodingController } from './controllers/CodingController.js';
 import { ChallengeController } from './controllers/ChallengeController.js';
