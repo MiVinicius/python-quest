@@ -1,0 +1,40 @@
+# Ferramentas de IA / Design local (Antigravity & Stitch)
+.agents/
+.stitch/
+.stitch.json
+.gemini/
+
+# Dependências e artefatos de build/teste locais (caso use npm/npx)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# Variáveis de ambiente e segredos locais
+.env
+.env.*
+*.pem
+*.key
+
+# Configurações de Editores e IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Arquivos de Sistema Operacional (Windows / macOS / Linux)
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+*~
+
+# Backups temporários de perfis exportados localmente
+python-quest-backup-*.json

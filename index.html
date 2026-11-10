@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Quest - Corrida de 64 Casas com Programação em Blocos</title>
+  <meta name="description" content="Jogo educativo e competitivo de tabuleiro de 64 casas com programação Python em blocos, cartas de desafio 3D e multiplayer online.">
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/blocks.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/cards.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐍</text></svg>">
+</head>
+<body>
+
+  <!-- ========================================================================
+       TELA 1: MENU HUB INICIAL (JOGAR, COMO JOGAR, HISTÓRICO, PERFIL, MULTIPLAYER)
+       ======================================================================== -->
+  <div id="homeScreen" class="screen-container home-screen screen-active">
+    <!-- Renderizado dinamicamente pelo HomeView.js -->
+  </div>
+
+  <!-- ========================================================================
+       TELA 2: ARENA DE JOGO (TABULEIRO, DADO, BLOCOS & TERMINAL)
+       ======================================================================== -->
+  <div id="gameArenaScreen" class="screen-container" style="display: none;">
+
+    <!-- CABEÇALHO DA ARENA -->
+    <header class="main-header">
+      <div class="header-inner">
+        <div class="logo-container">
+          <span class="logo-icon">🐍</span>
+          <div class="logo-text">
+            <h1>PYTHON QUEST</h1>
+            <span class="badge-edition">•V0.2</span>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <!-- Botão Voltar ao Menu Principal -->
+          <button id="backToHomeBtn" class="btn-ghost btn-sm" title="Retornar à Tela Inicial">
+            <span>🏠</span>
+            <span>Menu Hub</span>
+          </button>
+
+          <!-- Badge da Sala Multiplayer (ativo apenas no modo online) -->
+          <div id="roomCodeBadge" class="room-code-badge" style="display: none;">
+            <span class="pulse-dot"></span>
+            <span id="roomCodeBadgeText">Sala: PY-XXXX</span>
+          </div>
+
+          <!-- Dificuldade do Bot (apenas no modo Solo vs CPU) -->
+          <select id="difficultySelect" class="select-difficulty" title="Ajuste a inteligência do Bot">
+            <option value="easy">Dificuldade: Iniciante</option>
+            <option value="normal" selected>Dificuldade: Equilibrada</option>
+            <option value="hard">Dificuldade: Mestre</option>
+          </select>
+
+          <!-- Botão Guia Open Source (GitHub) -->
+          <button id="openGithubGuideBtn" class="btn-ghost btn-sm" title="Saiba como adicionar novos desafios no GitHub">
+            <span>🐙</span>
+            <span>Colaborar</span>
+          </button>
+
+          <!-- Botão Alternador de Áudio -->
+          <button id="soundToggleBtn" class="btn-ghost btn-sm" title="Ligar/Desligar Efeitos Sonoros">
+            🔊 Som
+          </button>
+
+          <!-- Botão Reiniciar (apenas no modo Solo vs CPU) -->
+          <button id="restartTopBtn" class="btn-ghost btn-sm" title="Reiniciar Corrida">
+            🔄 Reiniciar
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- BARRA DE PROGRESSO DA CORRIDA (RACE TRACKER 1 A 64) -->
+    <div class="race-tracker-bar">
+      <div class="tracker-inner">
+        <div class="tracker-labels">
+          <span>Casa 1 (Largada)</span>
+          <span id="roundCountText">Rodada: 1</span>
+          <span id="raceTrackerGoalLabel">Casa 64 (Python Master) 🏆</span>
+        </div>
+        <div class="track-line-wrapper">
+          <div id="raceTrackPlayer" class="track-pawn track-player" style="left: 0%;" title="Sua posição">🐍</div>
+          <div id="raceTrackBot" class="track-pawn track-bot" style="left: 0%;" title="Posição da CPU">🤖</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LAYOUT PRINCIPAL DE 3 COLUNAS -->
+    <main class="app-container">
+
+      <!-- COLUNA ESQUERDA: STATUS DA CORRIDA, PLACAR & LOGS DO JOGO -->
+      <aside class="left-panel">
+        
+        <!-- Indicador de Turno Ativo -->
+        <div class="panel-card">
+          <span class="panel-title">Estado da Corrida</span>
+          <div id="activeTurnBadge" class="turn-badge turn-player">
+            <span class="pulse-dot"></span> Sua Vez (Você)
+          </div>
+
+          <div class="racers-status-grid">
+            <div class="racer-card">
+              <div class="racer-header">
+                <span id="playerAvatarIcon">🐍</span>
+                <span id="playerNameDisplay">Você</span>
+              </div>
+              <div class="racer-pos" id="playerPosText">1 / 64</div>
+              <div id="playerStatusBadge" class="badge-status badge-normal">🟢 Normal</div>
+            </div>
+
+            <div class="racer-card">
+              <div class="racer-header">
+                <span id="opponentAvatarIcon">🤖</span>
+                <span id="opponentNameDisplay">CPU</span>
+              </div>
+              <div class="racer-pos" id="botPosText">1 / 64</div>
+              <div id="botStatusBadge" class="badge-status badge-normal">🟢 Operacional</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Guia Detalhado do Tabuleiro e Ações -->
+        <div class="panel-card" style="max-height: 290px; overflow-y: auto;">
+          <span class="panel-title">Guia Completo do Jogo</span>
+          <div style="font-size: 0.74rem; display: flex; flex-direction: column; gap: 8px; color: #cbd5e1; line-height: 1.35;">
+            
+            <!-- Seção 1: Casas -->
+            <div>
+              <span style="font-size: 0.68rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Casas da Trilha:</span>
+              <div style="margin-top: 3px; display: flex; flex-direction: column; gap: 4px;">
+                <div><strong style="color: var(--color-cyan);">⚡ Atalhos (+3/+4):</strong> Salto acelerador de casas.</div>
+                <div><strong style="color: var(--color-danger);">🐛 Bugs (-3/-5):</strong> Erro que força recuo (anulado por Escudo).</div>
+                <div><strong style="color: var(--color-warning);">❓ Desafio:</strong> Escolha entre 3 cartas táticas de Python.</div>
+                <div><strong style="color: var(--py-yellow);">🏆 Meta (64):</strong> Linha de chegada do Python Master.</div>
+              </div>
+            </div>
+
+            <!-- Seção 2: Blocos Especiais -->
+            <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 6px;">
+              <span style="font-size: 0.68rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Ações dos Blocos:</span>
+              <div style="margin-top: 3px; display: flex; flex-direction: column; gap: 4px;">
+                <div><strong style="color: #6ee7b7;">➡️ Avançar:</strong> Caminhada normal pelo dado.</div>
+                <div><strong style="color: #c4b5fd;">🦘 Pular:</strong> Salta casas ignorando armadilhas no caminho.</div>
+                <div><strong style="color: #7dd3fc;">🛡️ Escudo:</strong> Blindagem <code>try/except</code> que anula 100% o próximo Bug.</div>
+                <div><strong style="color: #fde68a;">🔀 Condicional if:</strong> Decisão tática (<code>if dado % 2 == 0:</code> / <code>if oponente.a_frente:</code>) que concede <strong>+1 passo bônus</strong> quando a condição for <code>True</code>.</div>
+              </div>
+            </div>
+
+            <!-- Seção 3: Cartas 3D -->
+            <div style="border-top: 1px solid rgba(255,255,255,0.06); padding-top: 6px;">
+              <span style="font-size: 0.68rem; font-weight: 700; color: #94a3b8; text-transform: uppercase;">Cartas de Desafio 3D:</span>
+              <div style="margin-top: 3px; display: flex; flex-direction: column; gap: 3px;">
+                <div><span style="color: #34d399; font-weight: 700;">🟢 Comum:</span> +2 passos se acertar / sem risco.</div>
+                <div><span style="color: #38bdf8; font-weight: 700;">🔵 Rara:</span> +4 passos se acertar / -1 recuo se errar.</div>
+                <div><span style="color: #c084fc; font-weight: 700;">🟣 Épica:</span> +6 passos se acertar / -2 recuo se errar.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Console Logs do Jogo -->
+        <div class="panel-card" style="flex: 1;">
+          <span class="panel-title">Terminal de Eventos</span>
+          <div class="console-logs-container" id="consoleLogsList">
+            <!-- Logs gerados dinamicamente -->
+          </div>
+        </div>
+
+      </aside>
+
+      <!-- COLUNA CENTRAL: TABULEIRO DE 64 CASAS (8x8) -->
+      <section class="center-panel">
+        <div id="boardContainer">
+          <!-- Renderizado dinamicamente pelo BoardView.js -->
+        </div>
+      </section>
+
+      <!-- COLUNA DIREITA: DADO & WORKSPACE DE BLOCOS -->
+      <aside class="right-panel">
+
+        <!-- Módulo de Rolagem de Dado 3D -->
+        <div id="diceContainer">
+          <!-- Renderizado dinamicamente pelo DiceView.js -->
+        </div>
+
+        <!-- Workspace de Montagem de Blocos com Drag & Drop e Preview Python -->
+        <div id="workspaceContainer">
+          <!-- Renderizado dinamicamente pelo BlockWorkspaceView.js -->
+        </div>
+
+      </aside>
+
+    </main>
+
+  </div>
+
+  <!-- CONTAINER DE MODAL DE ESCOLHA DE CARDS 3D -->
+  <div id="challengeCardsModal" class="cards-selection-overlay">
+    <!-- Renderizado dinamicamente pelo ChallengeCardsView.js -->
+  </div>
+
+  <!-- Script Principal com Arquitetura MVC (ES Modules) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,602 @@
+[
+  {
+    "id": "py-001",
+    "categoria": "Tipos Básicos",
+    "dificuldade": "facil",
+    "pergunta": "Qual será a saída da instrução abaixo?",
+    "codigo": "x = [10, 20, 30]\nprint(len(x))",
+    "opcoes": ["2", "3", "30", "IndexError"],
+    "resposta_correta": 1,
+    "explicacao": "A função len() retorna a quantidade de itens na coleção. A lista possui 3 elementos.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-002",
+    "categoria": "Fatiamento de Strings",
+    "dificuldade": "facil",
+    "pergunta": "O que será exibido no console?",
+    "codigo": "msg = \"PYTHON\"\nprint(msg[0:2])",
+    "opcoes": ["PY", "PYT", "P", "PYTHON"],
+    "resposta_correta": 0,
+    "explicacao": "O fatiamento [0:2] pega os caracteres do índice 0 até antes do 2 (índices 0 e 1, que são 'P' e 'Y').",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-003",
+    "categoria": "Estruturas de Repetição",
+    "dificuldade": "facil",
+    "pergunta": "Quantas vezes a palavra 'Loop' será impressa?",
+    "codigo": "for i in range(1, 5):\n    print('Loop')",
+    "opcoes": ["5 vezes", "4 vezes", "6 vezes", "1 vez"],
+    "resposta_correta": 1,
+    "explicacao": "range(1, 5) itera sobre os valores 1, 2, 3 e 4, totalizando 4 execuções.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-004",
+    "categoria": "Operadores Lógicos",
+    "dificuldade": "facil",
+    "pergunta": "Qual é o valor impresso pela comparação?",
+    "codigo": "a = 5\nb = 10\nprint(a < 8 and b > 12)",
+    "opcoes": ["True", "False", "None", "SyntaxError"],
+    "resposta_correta": 1,
+    "explicacao": "a < 8 é True, porém b > 12 é False. No operador 'and', ambas as condições precisam ser verdadeiras, logo o resultado é False.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-005",
+    "categoria": "Listas e Métodos",
+    "dificuldade": "medio",
+    "pergunta": "Qual é o estado final da lista?",
+    "codigo": "nums = [1, 2, 3]\nnums.append(4)\nnums.pop(0)\nprint(nums)",
+    "opcoes": ["[1, 2, 3, 4]", "[2, 3, 4]", "[2, 3]", "[1, 2, 3]"],
+    "resposta_correta": 1,
+    "explicacao": "append(4) adiciona o 4 ao final ([1, 2, 3, 4]) e pop(0) remove o elemento do índice 0 (o número 1), restando [2, 3, 4].",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-006",
+    "categoria": "Funções",
+    "dificuldade": "medio",
+    "pergunta": "Qual o resultado da chamada da função?",
+    "codigo": "def somar(x, y=2):\n    return x * y\n\nprint(somar(4))",
+    "opcoes": ["6", "8", "16", "TypeError"],
+    "resposta_correta": 1,
+    "explicacao": "O parâmetro 'y' possui valor padrão 2. Logo, somar(4) calcula 4 * 2 = 8.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-007",
+    "categoria": "Dicionários",
+    "dificuldade": "medio",
+    "pergunta": "O que será retornado pelo método .get()?",
+    "codigo": "player = {'nome': 'Snake', 'nivel': 5}\nprint(player.get('vida', 100))",
+    "opcoes": ["None", "KeyError", "100", "5"],
+    "resposta_correta": 2,
+    "explicacao": "O método .get(chave, padrao) retorna o valor padrão (100) caso a chave não exista no dicionário, sem gerar KeyError.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-008",
+    "categoria": "List Comprehension",
+    "dificuldade": "medio",
+    "pergunta": "Qual será o conteúdo da lista gerada?",
+    "codigo": "quadrados = [n**2 for n in [1, 2, 3] if n > 1]\nprint(quadrados)",
+    "opcoes": ["[1, 4, 9]", "[4, 9]", "[2, 3]", "[4]"],
+    "resposta_correta": 1,
+    "explicacao": "Apenas os números maiores que 1 (2 e 3) são elevados ao quadrado (2**2=4 e 3**2=9).",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-009",
+    "categoria": "Operador Ternário",
+    "dificuldade": "facil",
+    "pergunta": "O que a variável 'status' armazenará?",
+    "codigo": "pontos = 75\nstatus = 'Aprovado' if pontos >= 60 else 'Reprovado'\nprint(status)",
+    "opcoes": ["Aprovado", "Reprovado", "True", "False"],
+    "resposta_correta": 0,
+    "explicacao": "Como 75 >= 60 é True, a expressão avalia para 'Aprovado'.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-010",
+    "categoria": "Tratamento de Exceções",
+    "dificuldade": "medio",
+    "pergunta": "Qual saída será gerada no bloco try/except?",
+    "codigo": "try:\n    n = int(\"abc\")\n    print(\"OK\")\nexcept ValueError:\n    print(\"Erro de conversão\")",
+    "opcoes": ["OK", "Erro de conversão", "ValueError", "Nenhuma saída"],
+    "resposta_correta": 1,
+    "explicacao": "A conversão int(\"abc\") levanta uma exceção ValueError, que é capturada pelo bloco except correspondente.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-011",
+    "categoria": "Controle de Fluxo",
+    "dificuldade": "facil",
+    "pergunta": "Qual número interromperá o loop com break?",
+    "codigo": "total = 0\nfor x in [2, 4, 6, 7, 8]:\n    if x % 2 != 0:\n        break\n    total += x\nprint(total)",
+    "opcoes": ["12", "19", "27", "6"],
+    "resposta_correta": 0,
+    "explicacao": "O loop soma 2 + 4 + 6 = 12. Ao chegar no 7 (ímpar), o break encerra o laço imediatamente.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-012",
+    "categoria": "Tuplas e Desempacotamento",
+    "dificuldade": "medio",
+    "pergunta": "Qual é o valor final de 'b'?",
+    "codigo": "a, b, *resto = [10, 20, 30, 40, 50]\nprint(b)",
+    "opcoes": ["10", "20", "[30, 40, 50]", "50"],
+    "resposta_correta": 1,
+    "explicacao": "O primeiro item vai para 'a' (10), o segundo para 'b' (20) e o restante é empacotado em 'resto'.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-013",
+    "categoria": "Operador Módulo",
+    "dificuldade": "facil",
+    "pergunta": "Qual é o resultado da operação abaixo?",
+    "codigo": "print(17 % 5)",
+    "opcoes": ["3", "2", "3.4", "1"],
+    "resposta_correta": 1,
+    "explicacao": "O operador % calcula o resto da divisão inteira. 17 dividido por 5 é 3 com resto 2.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-014",
+    "categoria": "Conjuntos (Sets)",
+    "dificuldade": "medio",
+    "pergunta": "O que será exibido pelo len() do conjunto?",
+    "codigo": "itens = {1, 2, 2, 3, 3, 3, 4}\nprint(len(itens))",
+    "opcoes": ["7", "4", "3", "TypeError"],
+    "resposta_correta": 1,
+    "explicacao": "Sets em Python não permitem elementos duplicados. O conjunto final é {1, 2, 3, 4}, com tamanho 4.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-015",
+    "categoria": "Métodos de Strings",
+    "dificuldade": "facil",
+    "pergunta": "Qual será o resultado de .strip()?",
+    "codigo": "texto = '   python quest   '\nprint(texto.strip().title())",
+    "opcoes": ["'python quest'", "'Python Quest'", "'   Python Quest   '", "'PYTHON QUEST'"],
+    "resposta_correta": 1,
+    "explicacao": "strip() remove os espaços em branco nas extremidades e title() capitaliza a primeira letra de cada palavra.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-016",
+    "categoria": "Dicionários",
+    "dificuldade": "medio",
+    "pergunta": "O que acontece ao acessar chave inexistente diretamente?",
+    "codigo": "dados = {'a': 1}\nprint(dados['b'])",
+    "opcoes": ["None", "0", "KeyError", "IndexError"],
+    "resposta_correta": 2,
+    "explicacao": "Acessar diretamente uma chave ausente via colchetes [] em um dicionário levanta a exceção KeyError.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-017",
+    "categoria": "Operadores de Associação",
+    "dificuldade": "facil",
+    "pergunta": "Qual valor booleano será impresso?",
+    "codigo": "frutas = ['maçã', 'banana', 'laranja']\nprint('uva' not in frutas)",
+    "opcoes": ["True", "False", "None", "ValueError"],
+    "resposta_correta": 0,
+    "explicacao": "'uva' realmente não está na lista de frutas, portanto 'uva' not in frutas avalia como True.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-018",
+    "categoria": "Função enumerate()",
+    "dificuldade": "medio",
+    "pergunta": "O que enumerate() produz para cada item?",
+    "codigo": "for item in enumerate(['A', 'B']):\n    print(item)",
+    "opcoes": ["Tuplas (índice, valor)", "Apenas os valores", "Apenas os índices", "Listas [índice, valor]"],
+    "resposta_correta": 0,
+    "explicacao": "enumerate() gera tuplas contendo o índice atual e o elemento correspondente (ex: (0, 'A') e (1, 'B')).",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-019",
+    "categoria": "Potenciação",
+    "dificuldade": "facil",
+    "pergunta": "Qual é o resultado da exponenciação abaixo?",
+    "codigo": "print(2 ** 3)",
+    "opcoes": ["6", "8", "9", "5"],
+    "resposta_correta": 1,
+    "explicacao": "Em Python, ** é o operador de exponenciação. 2 elevado a 3 é 8.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-020",
+    "categoria": "Escopo de Variáveis",
+    "dificuldade": "medio",
+    "pergunta": "Qual é o valor impresso fora da função?",
+    "codigo": "x = 10\ndef alterar():\n    x = 20\nalterar()\nprint(x)",
+    "opcoes": ["20", "10", "UnboundLocalError", "None"],
+    "resposta_correta": 1,
+    "explicacao": "A atribuição dentro da função cria uma variável local 'x', não alterando a variável global externa.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-021",
+    "categoria": "Formatação com f-strings",
+    "dificuldade": "facil",
+    "pergunta": "O que será exibido no console ao usar esta f-string?",
+    "codigo": "nome = 'Ada'\nnivel = 5\nprint(f'{nome} está no nível {nivel + 1}')",
+    "opcoes": [
+      "Ada está no nível 6",
+      "{nome} está no nível {nivel + 1}",
+      "Ada está no nível 5 + 1",
+      "SyntaxError"
+    ],
+    "resposta_correta": 0,
+    "explicacao": "As f-strings (literais formatados com prefixo f) avaliam expressões Python dentro de chaves {} em tempo de execução.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-022",
+    "categoria": "Divisão Inteira",
+    "dificuldade": "facil",
+    "pergunta": "Qual é o resultado do operador // em Python?",
+    "codigo": "resultado = 17 // 5\nprint(resultado)",
+    "opcoes": ["3.4", "3", "2", "4"],
+    "resposta_correta": 1,
+    "explicacao": "O operador // realiza a divisão inteira (floor division), descartando a parte fracionária (17 dividido por 5 dá quociente inteiro 3).",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-023",
+    "categoria": "Índices Negativos",
+    "dificuldade": "facil",
+    "pergunta": "Qual elemento da lista será impresso?",
+    "codigo": "linguagens = ['C', 'Java', 'Python', 'Rust']\nprint(linguagens[-1])",
+    "opcoes": ["'C'", "'Python'", "'Rust'", "IndexError"],
+    "resposta_correta": 2,
+    "explicacao": "Em Python, o índice -1 acessa diretamente o último elemento de uma sequência, -2 o penúltimo e assim por diante.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-024",
+    "categoria": "Conversão Booleana",
+    "dificuldade": "facil",
+    "pergunta": "Qual é o resultado da conversão bool() abaixo?",
+    "codigo": "print(bool(''), bool('0'))",
+    "opcoes": [
+      "False False",
+      "False True",
+      "True False",
+      "True True"
+    ],
+    "resposta_correta": 1,
+    "explicacao": "Uma string vazia '' é avaliada como False (falsy), mas qualquer string não vazia — mesmo '0' — é avaliada como True (truthy).",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-025",
+    "categoria": "Laço while",
+    "dificuldade": "facil",
+    "pergunta": "Qual será o valor final de cont após o laço?",
+    "codigo": "cont = 1\nwhile cont < 4:\n    cont += 1\nprint(cont)",
+    "opcoes": ["3", "4", "5", "Loop infinito"],
+    "resposta_correta": 1,
+    "explicacao": "Quando cont chega a 4, a condição cont < 4 torna-se False e o laço termina imprimindo 4.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-026",
+    "categoria": "Funções Lambda",
+    "dificuldade": "medio",
+    "pergunta": "Qual valor será retornado pela chamada abaixo?",
+    "codigo": "dobrar_somar = lambda x, y=3: (x * 2) + y\nprint(dobrar_somar(4))",
+    "opcoes": ["10", "14", "11", "TypeError"],
+    "resposta_correta": 2,
+    "explicacao": "Funções anônimas lambda aceitam parâmetros padrão. Com x=4 e y=3 (padrão), (4 * 2) + 3 resulta em 11.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-027",
+    "categoria": "Função zip()",
+    "dificuldade": "medio",
+    "pergunta": "Quantos elementos terá a lista gerada por zip()?",
+    "codigo": "nomes = ['Ana', 'Beto', 'Caio']\nnotas = [10, 8]\nprint(list(zip(nomes, notas)))",
+    "opcoes": [
+      "[('Ana', 10), ('Beto', 8)]",
+      "[('Ana', 10), ('Beto', 8), ('Caio', None)]",
+      "ValueError",
+      "[('Ana', 10), ('Beto', 8), ('Caio', 0)]"
+    ],
+    "resposta_correta": 0,
+    "explicacao": "A função zip() agrupa iteráveis em pares e para assim que o menor iterável (notas, com 2 itens) se esgota.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-028",
+    "categoria": "Ordenação Personalizada",
+    "dificuldade": "medio",
+    "pergunta": "Em que ordem as palavras ficarão após o sorted()?",
+    "codigo": "palavras = ['python', 'c', 'java', 'go']\nprint(sorted(palavras, key=len))",
+    "opcoes": [
+      "['c', 'java', 'go', 'python']",
+      "['c', 'go', 'python', 'java']",
+      "['python', 'java', 'go', 'c']",
+      "['c', 'go', 'java', 'python']"
+    ],
+    "resposta_correta": 3,
+    "explicacao": "O argumento key=len ordena os elementos em ordem crescente de acordo com o comprimento (número de caracteres) de cada string.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-029",
+    "categoria": "Dict Comprehension",
+    "dificuldade": "medio",
+    "pergunta": "Qual dicionário será criado pelo código abaixo?",
+    "codigo": "d = {x: x ** 2 for x in range(1, 4)}\nprint(d)",
+    "opcoes": [
+      "{1: 2, 2: 4, 3: 6}",
+      "{1: 1, 2: 4, 3: 9}",
+      "{0: 0, 1: 1, 2: 4, 3: 9}",
+      "[1, 4, 9]"
+    ],
+    "resposta_correta": 1,
+    "explicacao": "range(1, 4) gera 1, 2 e 3. A compreensão de dicionário mapeia cada número x para o seu quadrado x ** 2.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-030",
+    "categoria": "Funções all() e any()",
+    "dificuldade": "medio",
+    "pergunta": "O que será impresso por all() e any()?",
+    "codigo": "valores = [1, 2, 0, 4]\nprint(all(valores), any(valores))",
+    "opcoes": [
+      "True True",
+      "False False",
+      "False True",
+      "True False"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "all() exige que todos os itens sejam verdadeiros (como há um 0, retorna False). Já any() retorna True se pelo menos um item for verdadeiro.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-031",
+    "categoria": "Armadilha de Argumento Mutável",
+    "dificuldade": "dificil",
+    "pergunta": "O que será impresso na segunda chamada da função?",
+    "codigo": "def adicionar(item, lista=[]):\n    lista.append(item)\n    return lista\n\nadicionar(1)\nprint(adicionar(2))",
+    "opcoes": [
+      "[2]",
+      "[1, 2]",
+      "[[1], [2]]",
+      "TypeError"
+    ],
+    "resposta_correta": 1,
+    "explicacao": "Argumentos padrão em Python são avaliados apenas uma vez na definição da função (def). A mesma lista padrão é reutilizada entre chamadas!",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-032",
+    "categoria": "Precedência de Exponenciação",
+    "dificuldade": "dificil",
+    "pergunta": "Qual é o resultado de 2 ** 3 ** 2 em Python?",
+    "codigo": "print(2 ** 3 ** 2)",
+    "opcoes": [
+      "64",
+      "36",
+      "512",
+      "256"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "O operador ** possui associatividade da direita para a esquerda! Primeiro calcula-se 3 ** 2 = 9, e depois 2 ** 9 = 512.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-033",
+    "categoria": "Fatiamento Avançado (Slicing)",
+    "dificuldade": "dificil",
+    "pergunta": "Qual é a saída do fatiamento com passo negativo?",
+    "codigo": "texto = 'PYTHON'\nprint(texto[4:1:-1])",
+    "opcoes": [
+      "'OHT'",
+      "'NOHT'",
+      "'HTY'",
+      "'OHTY'"
+    ],
+    "resposta_correta": 0,
+    "explicacao": "Com passo -1, o fatiamento percorre para trás começando no índice 4 ('O'), passando pelo 3 ('H') e 2 ('T'), e parando antes do índice final 1.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-034",
+    "categoria": "Geradores e yield",
+    "dificuldade": "dificil",
+    "pergunta": "Qual será a saída ao chamar next() duas vezes?",
+    "codigo": "def contador():\n    yield 10\n    yield 20\n\ng = contador()\nnext(g)\nprint(next(g))",
+    "opcoes": [
+      "10",
+      "StopIteration",
+      "[10, 20]",
+      "20"
+    ],
+    "resposta_correta": 3,
+    "explicacao": "Funções com yield retornam um gerador que pausa seu estado a cada chamada de next(). O primeiro next(g) consome 10 e o segundo retorna 20.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-035",
+    "categoria": "Referência vs Cópia",
+    "dificuldade": "dificil",
+    "pergunta": "Qual será o valor da matriz m após a modificação?",
+    "codigo": "m = [[0] * 2] * 3\nm[0][0] = 9\nprint(m)",
+    "opcoes": [
+      "[[9, 0], [0, 0], [0, 0]]",
+      "[[9, 0], [9, 0], [9, 0]]",
+      "[[9, 9], [0, 0], [0, 0]]",
+      "[[9, 9], [9, 9], [9, 9]]"
+    ],
+    "resposta_correta": 1,
+    "explicacao": "Multiplicar uma lista de listas ([...] * 3) cria 3 referências para a MESMA sublista interna na memória. Alterar m[0][0] afeta todas as linhas!",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-036",
+    "categoria": "Empacotamento *args e **kwargs",
+    "dificuldade": "dificil",
+    "pergunta": "Quais são os tipos de args e kwargs dentro da função?",
+    "codigo": "def inspecionar(*args, **kwargs):\n    print(type(args).__name__, type(kwargs).__name__)\n\ninspecionar(1, 2, modo='turbo')",
+    "opcoes": [
+      "list dict",
+      "tuple set",
+      "tuple dict",
+      "list tuple"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "Em Python, *args captura argumentos posicionais extras em uma tupla (tuple) e **kwargs captura argumentos nomeados em um dicionário (dict).",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-037",
+    "categoria": "Closures e nonlocal",
+    "dificuldade": "dificil",
+    "pergunta": "O que o código abaixo imprime?",
+    "codigo": "def criar_acumulador(inicial):\n    total = inicial\n    def somar(v):\n        nonlocal total\n        total += v\n        return total\n    return somar\n\nac = criar_acumulador(10)\nac(5)\nprint(ac(3))",
+    "opcoes": [
+      "18",
+      "13",
+      "15",
+      "UnboundLocalError"
+    ],
+    "resposta_correta": 0,
+    "explicacao": "A palavra-chave nonlocal permite que a função interna modifique a variável 'total' do escopo envolvente (closure), acumulando 10 + 5 + 3 = 18.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-038",
+    "categoria": "Operações de Conjuntos (set)",
+    "dificuldade": "dificil",
+    "pergunta": "O que o operador ^ (diferença simétrica) produz entre dois sets?",
+    "codigo": "a = {1, 2, 3}\nb = {3, 4, 5}\nprint(a ^ b)",
+    "opcoes": [
+      "{3}",
+      "{1, 2}",
+      "{1, 2, 3, 4, 5}",
+      "{1, 2, 4, 5}"
+    ],
+    "resposta_correta": 3,
+    "explicacao": "O operador ^ retorna a diferença simétrica: elementos que estão em 'a' ou em 'b', mas NÃO em ambos simultaneamente (exclui o 3).",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-039",
+    "categoria": "Bloco try / except / finally",
+    "dificuldade": "dificil",
+    "pergunta": "Qual valor é retornado pela função?",
+    "codigo": "def testar():\n    try:\n        return 'TENTATIVA'\n    finally:\n        return 'FINALMENTE'\n\nprint(testar())",
+    "opcoes": [
+      "TENTATIVA",
+      "FINALMENTE",
+      "('TENTATIVA', 'FINALMENTE')",
+      "SyntaxError"
+    ],
+    "resposta_correta": 1,
+    "explicacao": "O bloco finally SEMPRE é executado antes da função encerrar. Se houver um return dentro do finally, ele sobrescreve o return do bloco try!",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-040",
+    "categoria": "Orientação a Objetos e Métodos Mágicos",
+    "dificuldade": "dificil",
+    "pergunta": "Qual método especial permite usar len() em um objeto customizado?",
+    "codigo": "class Baralho:\n    def __init__(self, cartas):\n        self.cartas = cartas\n    def __len__(self):\n        return len(self.cartas)\n\nprint(len(Baralho(['A', 'K', 'Q'])))",
+    "opcoes": [
+      "TypeError",
+      "0",
+      "3",
+      "None"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "O dunder method __len__(self) é invocado automaticamente pela função embutida len(obj), retornando 3.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-041",
+    "categoria": "Desempacotamento com Asterisco",
+    "dificuldade": "dificil",
+    "pergunta": "Qual será o valor da variável meio?",
+    "codigo": "primeiro, *meio, ultimo = [10, 20, 30, 40, 50]\nprint(meio)",
+    "opcoes": [
+      "[20, 30, 40]",
+      "(20, 30, 40)",
+      "20",
+      "[10, 20, 30, 40]"
+    ],
+    "resposta_correta": 0,
+    "explicacao": "No desempacotamento estendido (PEP 3132), a variável prefixada com * captura todos os elementos intermediários restantes sempre na forma de uma lista.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-042",
+    "categoria": "Operador Walrus (:=)",
+    "dificuldade": "dificil",
+    "pergunta": "O que o operador := (morsa) faz neste código?",
+    "codigo": "dados = [1, 2, 3, 4]\nif (n := len(dados)) > 2:\n    print(f'Tamanho: {n}')",
+    "opcoes": [
+      "Lança SyntaxError dentro do if",
+      "Atribui True a n e imprime 'Tamanho: True'",
+      "Compara se n é diferente de len(dados)",
+      "Atribui 4 a n e imprime 'Tamanho: 4'"
+    ],
+    "resposta_correta": 3,
+    "explicacao": "Introduzido no Python 3.8, o operador := (assignment expression) atribui o valor à variável n e retorna esse mesmo valor para a expressão condicional.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-043",
+    "categoria": "Decoradores (@decorator)",
+    "dificuldade": "dificil",
+    "pergunta": "Qual será o resultado impresso pela função decorada?",
+    "codigo": "def dobrar_retorno(func):\n    def wrapper(*args):\n        return func(*args) * 2\n    return wrapper\n\n@dobrar_retorno\ndef somar(a, b):\n    return a + b\n\nprint(somar(3, 4))",
+    "opcoes": [
+      "7",
+      "14",
+      "24",
+      "TypeError"
+    ],
+    "resposta_correta": 1,
+    "explicacao": "O decorador @dobrar_retorno envolve a função somar(3, 4). A soma original retorna 7 e o wrapper multiplica o resultado por 2, resultando em 14.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-044",
+    "categoria": "Curto-Circuito Lógico",
+    "dificuldade": "dificil",
+    "pergunta": "Qual valor exato é retornado por esta expressão lógica?",
+    "codigo": "resultado = '' or 0 or 'Python' or 'Quest'\nprint(resultado)",
+    "opcoes": [
+      "True",
+      "'Quest'",
+      "'Python'",
+      "0"
+    ],
+    "resposta_correta": 2,
+    "explicacao": "O operador 'or' em Python retorna o PRIMEIRO operando avaliado como verdadeiro (truthy), ou o último se todos forem falsy. '' e 0 são falsy, logo para em 'Python'.",
+    "autor": "Comunidade Python Quest"
+  },
+  {
+    "id": "py-045",
+    "categoria": "Chaves de Dicionário e Hashability",
+    "dificuldade": "dificil",
+    "pergunta": "O que acontece ao executar o código abaixo?",
+    "codigo": "coordenadas = {(10, 20): 'Base', (30, 40): 'Torre'}\nprint(coordenadas[(10, 20)])",
+    "opcoes": [
+      "Imprime 'Base'",
+      "TypeError: unhashable type: 'tuple'",
+      "KeyError",
+      "Imprime (10, 20)"
+    ],
+    "resposta_correta": 0,
+    "explicacao": "Diferente das listas, tuplas contendo elementos imutáveis são imutáveis e 'hashable', podendo ser usadas perfeitamente como chaves de dicionários!",
+    "autor": "Comunidade Python Quest"
+  }
+]
