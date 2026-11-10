@@ -190,9 +190,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const difficultySelect = document.getElementById('difficultySelect');
   if (difficultySelect) {
+    const difficultyLabels = {
+      easy: 'Dificuldade: Iniciante',
+      normal: 'Dificuldade: Equilibrada',
+      hard: 'Dificuldade: Mestre'
+    };
+
+    const syncDifficultyMarkers = (selectedVal) => {
+      Array.from(difficultySelect.options).forEach((opt) => {
+        const baseLabel = difficultyLabels[opt.value] || opt.textContent.replace(/^✓\s*/, '');
+        opt.textContent = opt.value === selectedVal ? `✓ ${baseLabel}` : baseLabel;
+      });
+    };
+
+    syncDifficultyMarkers(difficultySelect.value);
+
     difficultySelect.addEventListener('change', (e) => {
-      botModel.setDifficulty(e.target.value);
-      gameState.addLog('Config', `Dificuldade da CPU ajustada para: ${e.target.value.toUpperCase()}`, 'info');
+      const val = e.target.value;
+      syncDifficultyMarkers(val);
+      botModel.setDifficulty(val);
+      gameState.addLog('Config', `Dificuldade da CPU ajustada para: ${val.toUpperCase()}`, 'info');
     });
   }
 
